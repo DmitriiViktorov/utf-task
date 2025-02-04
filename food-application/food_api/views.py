@@ -1,6 +1,7 @@
 from django.db.models import Prefetch
 from django.views.generic import ListView
 from rest_framework.generics import ListAPIView
+from rest_framework.renderers import JSONRenderer
 from rest_framework.response import Response
 from drf_spectacular.utils import extend_schema
 
@@ -17,6 +18,8 @@ def get_published_categories():
 
 
 class FoodListView(ListAPIView):
+    renderer_classes = [JSONRenderer]  # Явно указываем, что выдаем JSON
+
     @extend_schema(
         summary='Get a list of published food categories',
         description='Returns a list of categories that have published foods.',
