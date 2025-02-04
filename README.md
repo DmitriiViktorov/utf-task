@@ -42,6 +42,15 @@ python manage.py migrate
 python manage.py check_and_populate
 ```
 
+### Создание файла .env
+
+Перед запуском необходимо создать файл `.env` в корневой папке проекта и указать в нем настройки окружения.  
+
+В `.env` файле нужно указать следующие ключи:
+```ini
+DJANGO_SECRET_KEY=your-secret-key
+```
+
 ### Запуск сервера
 ```bash
 python manage.py runserver
